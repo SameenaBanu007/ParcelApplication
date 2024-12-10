@@ -1,5 +1,7 @@
 package com.app.model;
 
+import java.util.UUID;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -8,16 +10,16 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Customer {
-	
-	@Id	
-    @GeneratedValue(strategy = GenerationType.IDENTITY) 
-    private Integer customerId; 
-	
-    private String customerName;	
-	
-    private String customerSlug;	
 
-    public Customer() {}
+	@Id	
+	@GeneratedValue(strategy = GenerationType.UUID) 
+	private UUID customerId; 
+
+	private String customerName;	
+
+	private String customerSlug;	
+
+	public Customer() {}
 
 	public Customer(String customerName, String customerSlug) {
 		super();	
@@ -25,11 +27,11 @@ public class Customer {
 		this.customerSlug = customerSlug;		
 	}
 
-	public Integer getCustomerId() {
+	public UUID getCustomerId() {
 		return customerId;
 	}
 
-	public void setCustomerId(Integer customerId) {
+	public void setCustomerId(UUID customerId) {
 		this.customerId = customerId;
 	}
 
@@ -48,6 +50,6 @@ public class Customer {
 	public void setCustomerSlug(String customerSlug) {
 		this.customerSlug = customerSlug;
 	}
-    
-   
+
+
 }

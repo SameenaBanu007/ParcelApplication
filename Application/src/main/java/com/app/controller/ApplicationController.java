@@ -19,25 +19,25 @@ import com.app.service.ApplicationService;
 @RequestMapping("/application")
 public class ApplicationController {
 
-   @Autowired
-   private ApplicationService service;   
-   
-   @GetMapping("/next-tracking-number")
-   public ResponseEntity<TrackingDetails> processNextTrackingNumber(@RequestBody  TrackData data) {
-	   TrackingDetails tractingNumber =  service.processNextTrackingNumber(data);
-       return tractingNumber != null ? ResponseEntity.ok(tractingNumber) : ResponseEntity.notFound().build();
-   }
- 
-    @PostMapping("/createCustomer")
-    public ResponseEntity<Customer> createCustomer(@RequestBody Customer customer) { 
-    	Customer cust = service.createCustomer(customer);
-        return cust != null ? ResponseEntity.ok(cust) : ResponseEntity.notFound().build();
-    }
-    
-    @PostMapping("/createParcel")
-    public ResponseEntity<Parcel> createParcel(@RequestBody Parcel parcel) { 
-    	Parcel parc = service.createParcel(parcel);    
-        return parc != null ? ResponseEntity.ok(parc) : ResponseEntity.notFound().build();
-    }
-   
+	@Autowired
+	private ApplicationService service;   
+
+	@GetMapping("/next-tracking-number")
+	public ResponseEntity<TrackingDetails> processNextTrackingNumber(@RequestBody  TrackData data) {
+		TrackingDetails tractingNumber =  service.processNextTrackingNumber(data);
+		return tractingNumber != null ? ResponseEntity.ok(tractingNumber) : ResponseEntity.notFound().build();
+	}
+
+	@PostMapping("/createCustomer")
+	public ResponseEntity<Customer> createCustomer(@RequestBody Customer customer) { 
+		Customer cust = service.createCustomer(customer);
+		return cust != null ? ResponseEntity.ok(cust) : ResponseEntity.notFound().build();
+	}
+
+	@PostMapping("/createParcel")
+	public ResponseEntity<Parcel> createParcel(@RequestBody Parcel parcel) { 
+		Parcel parc = service.createParcel(parcel);    
+		return parc != null ? ResponseEntity.ok(parc) : ResponseEntity.notFound().build();
+	}
+
 }

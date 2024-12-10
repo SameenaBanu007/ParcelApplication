@@ -1,11 +1,9 @@
 package com.app.dto;
 
-import java.time.LocalDateTime;
-
 public class TrackingDetails {
-	
+
 	private String createdAt;
-	
+
 	private String trackingNumber;
 
 	public TrackingDetails(String createdAt, String trackingNumber) {
@@ -29,7 +27,7 @@ public class TrackingDetails {
 	public void setTrackingNumber(String trackingNumber) {
 		this.trackingNumber = trackingNumber;
 	}
-	
-	
+
+
 
 }

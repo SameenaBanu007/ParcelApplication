@@ -1,6 +1,7 @@
 package com.app.model;
 
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
+import java.util.UUID;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -13,36 +14,36 @@ import jakarta.persistence.Transient;
 
 @Entity
 public class Parcel {
-	
+
 	@Id	
-    @GeneratedValue(strategy = GenerationType.IDENTITY) 	
-    private Integer parcelId; 
-	
+	@GeneratedValue(strategy = GenerationType.IDENTITY) 	
+	private Integer parcelId; 
+
 	private String originCountryId;
-	
+
 	private String destinationCountryId;
-	
+
 	private Float  weight;
-	
-	private LocalDateTime createdAt;
-	
+
+	private OffsetDateTime createdAt;
+
 	private String trackingNumber;
-	
+
 	private Integer count;
-	
+
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "customer_id")
 	private Customer customer;
-	
+
 	@Transient
-	private Integer customerId;
-	
+	private UUID customerId;
+
 	public Parcel() {
-		
+
 	}
 
-	public Parcel(String originCountryId, String destinationCountryId, Float weight, LocalDateTime createdAt,
-			Integer customerId, String trackingNumber, Integer count) {
+	public Parcel(String originCountryId, String destinationCountryId, Float weight, OffsetDateTime createdAt,
+			UUID customerId, String trackingNumber, Integer count) {
 		super();
 		this.originCountryId = originCountryId;
 		this.destinationCountryId = destinationCountryId;
@@ -84,11 +85,11 @@ public class Parcel {
 		this.weight = weight;
 	}
 
-	public LocalDateTime getCreatedAt() {
+	public OffsetDateTime getCreatedAt() {
 		return createdAt;
 	}
 
-	public void setCreatedAt(LocalDateTime createdAt) {
+	public void setCreatedAt(OffsetDateTime createdAt) {
 		this.createdAt = createdAt;
 	}	
 
@@ -116,14 +117,14 @@ public class Parcel {
 		this.count = count;
 	}
 
-	public Integer getCustomerId() {
+	public UUID getCustomerId() {
 		return customerId;
 	}
 
-	public void setCustomerId(Integer customerId) {
+	public void setCustomerId(UUID customerId) {
 		this.customerId = customerId;
 	}
 
-	
-	
+
+
 }

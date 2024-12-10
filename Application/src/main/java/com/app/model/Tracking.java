@@ -10,14 +10,14 @@ import jakarta.persistence.ManyToOne;
 public class Tracking {
 
 	@Id	  
-    private String trackingNumber; 
-	
+	private String trackingNumber; 
+
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "parcel_id")
 	private Parcel parcel;
-	
+
 	public Tracking(){
-		
+
 	}
 
 	public Tracking(String trackingNumber, Parcel parcel) {
@@ -41,8 +41,8 @@ public class Tracking {
 	public void setParcel(Parcel parcel) {
 		this.parcel = parcel;
 	}
-	
-	
-	
-	
+
+
+
+
 }

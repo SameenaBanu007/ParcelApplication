@@ -8,9 +8,9 @@ import com.app.model.Parcel;
 
 @Repository
 public interface ParcelRepository extends JpaRepository<Parcel, Integer> {
-		
+
 	public List<Parcel> findByCustomerAndOriginCountryIdAndDestinationCountryIdAndWeight
 	(Customer customer,String originCountryId, String destinationCountryId, Float weight);
-	
+
 
 }

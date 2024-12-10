@@ -1,29 +1,30 @@
 package com.app.dto;
 
-import java.time.LocalDate;
+import java.time.OffsetDateTime;
+import java.util.UUID;
 
 public class TrackData {
-	
-	private Integer customerId;
-	
+
+	private UUID customerId;
+
 	private String customerName;	
-	
-    private String customerSlug;
-    
-    private String originCountryId;
-	
+
+	private String customerSlug;
+
+	private String originCountryId;
+
 	private String destinationCountryId;
-	
+
 	private Float  weight;
-	
-	private LocalDate createdAt;
-	
+
+	private OffsetDateTime createdAt;
+
 	public TrackData() {
-		
+
 	}
 
-	public TrackData(Integer customerId, String customerName, String customerSlug, String browserVersion,
-			String originCountryId, String destinationCountryId, Float weight, LocalDate createdAt) {
+	public TrackData(UUID customerId, String customerName, String customerSlug, String browserVersion,
+			String originCountryId, String destinationCountryId, Float weight, OffsetDateTime createdAt) {
 		super();
 		this.customerId = customerId;
 		this.customerName = customerName;
@@ -34,11 +35,11 @@ public class TrackData {
 		this.createdAt = createdAt;
 	}
 
-	public Integer getCustomerId() {
+	public UUID getCustomerId() {
 		return customerId;
 	}
 
-	public void setCustomerId(Integer customerId) {
+	public void setCustomerId(UUID customerId) {
 		this.customerId = customerId;
 	}
 
@@ -58,7 +59,7 @@ public class TrackData {
 		this.customerSlug = customerSlug;
 	}
 
-	
+
 	public String getOriginCountryId() {
 		return originCountryId;
 	}
@@ -83,15 +84,15 @@ public class TrackData {
 		this.weight = weight;
 	}
 
-	public LocalDate getCreatedAt() {
+	public OffsetDateTime getCreatedAt() {
 		return createdAt;
 	}
 
-	public void setCreatedAt(LocalDate createdAt) {
+	public void setCreatedAt(OffsetDateTime createdAt) {
 		this.createdAt = createdAt;
 	}
 
 
-	
+
 
 }
